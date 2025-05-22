@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ega's Self-Biography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #f3ec78, #af4261, #4b6cb7, #34e89e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #333;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    nav {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    nav h1 {
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 400;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffe074;
+    }
+
+     .main-content {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      align-items: center;     
+      padding: 3rem 5%;
+      gap: 3rem;
+      min-height: calc(100vh - 72px); 
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 3rem 5%;
+      gap: 3rem;
+    }
+
+    .left-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      min-width: 300px;
+      align-items: center;
+    }
+
+    .left-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+    .left-image img:hover {
+      transform: scale(1.03);
+    }
+
+    .right-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .right-text h2 {
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      color: #6a11cb;
+      text-align: center;
+    }
+
+    .right-text ul {
+      list-style: none;
+      padding-left: 0;
+      align-content: center;
+    }
+
+    .right-text ul li {
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      background: #f1f5fb;
+      border-left: 5px solid #6a11cb;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .section-title {
+  width: 100%;
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: -1rem;
+  letter-spacing: 3px;
+}
+
+.page {
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+.page-transition {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add page class to the body for transitions
+      document.body.classList.add('page');
+      document.body.classList.add('page-transition');
+      
+      // Handle navigation links
+      const navLinks = document.querySelectorAll('nav a');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Only handle internal links
+          if (this.hostname === window.location.hostname) {
+            e.preventDefault();
+            const targetPage = this.getAttribute('href');
+            
+            // Fade out current page
+            document.body.classList.add('fade-out');
+            
+            // Navigate to new page after transition
+            setTimeout(function() {
+              window.location.href = targetPage;
+            }, 600);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body class="page">
+
+  <nav>
+    <h1>Navigation Bar</h1>
+    <div>
+      <a href="index.html">Self-Biography</a>
+      <a href="karakter.html">My Favourite Character</a>
+    </div>
+  </nav>
+  <h2 class="section-title">Ega</h2>
+  <div class="main-content">
+    <div class="left-image">
+      <img src="Screenshot 2025-05-20 215335.png" alt="Ega's photo">
+    </div>
+    <div class="right-text">
+      <h2>About Me</h2>
+      <ul>
+        <li>My name is Ega</li>
+        <li>Born on August 1, 2011</li>
+        <li>As of writing this, I am 13 years old</li>
+        <li>Lives in Tangerang Selatan</li>
+        <li>I like to play games and football</li>
+        <li>I go to school at Santa Laurensia Alam Sutera</li>
+        <li>I live in a family of 4</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
